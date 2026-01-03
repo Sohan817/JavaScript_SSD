@@ -1,116 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boolens and if-else</title>
-</head>
-<body>
-
-  <button onclick="console.log(`Cart Quantity: ${cartQuantity}`)">Show Quantity</button>
-  <button onclick="
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolens and if-else</title>
+  </head>
+  <body>
+    <button onclick="console.log(`Cart Quantity: ${cartQuantity}`)">
+      Show Quantity
+    </button>
+    <button
+      onclick="
     if(cartQuantity<10){
       cartQuantity += 1;
       console.log(`Cart Quantity: ${cartQuantity}`);
     }else{
       alert(`Cart quantity is full`);
     }
-  ">Add to Cart</button>
-  <button onclick="
+  "
+    >
+      Add to Cart
+    </button>
+    <button
+      onclick="
     if(cartQuantity<10){
       cartQuantity += 2;
       console.log(`Cart Quantity: ${cartQuantity}`);
     }else{
       alert(`Cart quantity is full`);
     }
-  ">+2</button>
-  <button onclick="
+  "
+    >
+      +2
+    </button>
+    <button
+      onclick="
     if(cartQuantity<10){
       cartQuantity += 3;
       console.log(`Cart Quantity: ${cartQuantity}`);
     }else{
       alert(`Cart quantity is full`);
     }
-  ">+3</button>
-  <button onclick="
+  "
+    >
+      +3
+    </button>
+    <button
+      onclick="
  if(cartQuantity<10){
     cartQuantity += 4;
     console.log(`Cart Quantity: ${cartQuantity}`);
   }else{
     alert(`Cart quantity is full`);
-  }">+4</button>
-  <button onclick="
+  }"
+    >
+      +4
+    </button>
+    <button
+      onclick="
     if(cartQuantity<10){
       cartQuantity += 5;
       console.log(`Cart Quantity: ${cartQuantity}`);
     }else{
       alert(`Cart quantity is full`);
-  }">+5</button>
+  }"
+    >
+      +5
+    </button>
 
-  <button onclick="
+    <button
+      onclick="
       if(cartQuantity>=1){
             cartQuantity --;
             console.log(`Cart Quantity: ${cartQuantity}`);
           }else{
             alert(`Not enough items in the cart`);
       }
-  ">Remove From the Cart</button>
-  <button onclick="
+  "
+    >
+      Remove From the Cart
+    </button>
+    <button
+      onclick="
       if(cartQuantity>=1){
             cartQuantity -=2;
             console.log(`Cart Quantity: ${cartQuantity}`);
           }else{
             alert(`Not enough items in the cart`);
       }
-  ">-2</button>
-  <button onclick="
+  "
+    >
+      -2
+    </button>
+    <button
+      onclick="
       if(cartQuantity>=1){
             cartQuantity -=3;
             console.log(`Cart Quantity: ${cartQuantity}`);
           }else{
             alert(`Not enough items in the cart`);
       }
-">-3</button>
-  <button onclick="
+"
+    >
+      -3
+    </button>
+    <button
+      onclick="
   cartQuantity = 0;
   console.log('Cart Quantity is reset.');
-  console.log(`Cart Quantity: ${cartQuantity}`);">Reset Cart</button>
+  console.log(`Cart Quantity: ${cartQuantity}`);"
+    >
+      Reset Cart
+    </button>
 
-  <script>
-    //Hour Message
-    const date = new Date();
-    let hour = date.getHours();
-    const name = 'Shorna'
-    hour = 14;
-    if(hour >= 6 && hour<= 12){
-      console.log(`Good Morning ${name}`);
-    }else if(hour >= 13 && hour<= 17){
-      console.log(`Good Afternoon ${name}`);
-    }else{
-      console.log(`Good Night ${name}`);
-    }
+    <script>
+      //Hour Message
+      const date = new Date();
+      let hour = date.getHours();
+      const name = "Shorna";
+      hour = 14;
+      if (hour >= 6 && hour <= 12) {
+        console.log(`Good Morning ${name}`);
+      } else if (hour >= 13 && hour <= 17) {
+        console.log(`Good Afternoon ${name}`);
+      } else {
+        console.log(`Good Night ${name}`);
+      }
 
-    //Discout
-    let age = 4;
-    const isHoliday = true;
-    if((age <= 6 || age>= 65) && isHoliday== false )  {
-      console.log('Discount');
-    }else{
-      console.log('No Discount');
-    }
+      //Discout
+      let age = 4;
+      const isHoliday = true;
+      if ((age <= 6 || age >= 65) && isHoliday == false) {
+        console.log("Discount");
+      } else {
+        console.log("No Discount");
+      }
 
-    //Flip-flop game 
-    let randomNumber = Math.random();
-    let guess = 'heads';
-    const rsult = '';
-    (randomNumber>= 0 && randomNumber < 0.5) ? result = 'heads' : result = 'tails';
-  
-    (result == guess) ? console.log('You Win') : console.log('You Lost');
+      //Flip-flop game
+      let randomNumber = Math.random();
+      let guess = "heads";
+      const rsult = "";
+      randomNumber >= 0 && randomNumber < 0.5
+        ? (result = "heads")
+        : (result = "tails");
 
-    console.log(result);
+      result == guess ? console.log("You Win") : console.log("You Lost");
 
-    //Cart quantity
-    let cartQuantity = 0;
-  </script>
-</body>
+      console.log(result);
+
+      //Cart quantity
+      let cartQuantity = 0;
+    </script>
+  </body>
 </html>

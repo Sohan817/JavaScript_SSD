@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock Paper Scissors</title>
-</head>
-<body>
-  <P>Rock Paper Scissors</P>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <p>Rock Paper Scissors</p>
 
-
-  <button onclick="
+    <button
+      onclick="
       let computerMove = '';
       const randomNumber = Math.random();
       if(randomNumber>= 0 && randomNumber<1/3){
@@ -31,9 +31,13 @@
         result = 'Win';
       }
       alert(`You Pick Roct.Computer Pick ${computerMove}.You ${result}`)
-    ">Rock</button>
+    "
+    >
+      Rock
+    </button>
 
-  <button onclick="
+    <button
+      onclick="
         let computerMove1 = '';
         const randomNumber1 = Math.random();
         if(randomNumber1>= 0 && randomNumber1<1/3){
@@ -55,9 +59,13 @@
           result1 = 'Lost';
         }
         alert(`You Pick Paper.Computer Pick ${computerMove1}.You ${result1}`)
-      ">Paper</button>
+      "
+    >
+      Paper
+    </button>
 
-  <button onclick="
+    <button
+      onclick="
         let computerMove2 = '';
         const randomNumber2 = Math.random();
         if(randomNumber2>= 0 && randomNumber2<1/3){
@@ -79,11 +87,11 @@
           result2 = 'Tie';
         }
         alert(`You Pick Scissors.Computer Pick ${computerMove2}.You ${result2}`)
-      ">Scissors</button>
+      "
+    >
+      Scissors
+    </button>
 
-
-  <script>
-
-  </script>
-</body>
+    <script></script>
+  </body>
 </html>
