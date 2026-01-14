@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body></body>
+  <script>
+    /*const product = {
+      name: "Shirt",
+      "delivary-time": "1 pm",
+      rating: {
+        "product-rating": 3,
+        count: 87,
+      },
+      fun: function function1() {
+        console.log("Function inside obect");
+      },
+    };
+    console.log(product.name);
+    console.log(product["delivary-time"]);
+    console.log(product.rating["count"]);
+    product.fun();*/
+
+    const obj1 = {
+      message: "Hello",
+    };
+    //Objects are references
+    const obj2 = obj1;
+    obj1.message = "Good job!";
+    console.log(obj2);
+
+    const obj3 = {
+      message: "Hello",
+    };
+    console.log(obj1.message);
+    console.log(obj1 === obj3);
+
+    const obj4 = {
+      name: "Mobile",
+      price: 799,
+    };
+
+    //if var name and properties name has same name we can desrtucter this
+    //const name = obj4.name;
+    //console.log(name);
+    //Destructuring
+    const { name, price } = obj4;
+    console.log(name);
+    console.log(price);
+  </script>
+</html>

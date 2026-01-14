@@ -18,9 +18,10 @@
     </button>
 
     <script>
-      let calculation = "";
+      let calculation = localStorage.getItem("calculation") || "";
       function updateCalculatio(val) {
         calculation += val;
+        localStorage.setItem("calculation", calculation);
         console.log(calculation);
       }
     </script>

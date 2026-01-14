@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Excercise</title>
+  </head>
+  <body>
+    <button
+      onclick="
+    playGame('heads');
+    "
+    >
+      Heads
+    </button>
+    <button
+      onclick="
+    playGame('tails');
+    "
+    >
+      Tails
+    </button>
+  </body>
+  <script>
+    const product = {
+      basketball: "basketball",
+      price: 2095,
+      "delivary-time": "3 days",
+    };
+    product.price += 500;
+    console.log(product.basketball);
+    console.log(product.price);
+    console.log(product["delivary-time"]);
+
+    const product1 = {
+      name: "Shirt",
+      price: 500,
+    };
+
+    const product2 = {
+      name: "Shirt",
+      price: 590,
+    };
+
+    // function comparePrice(product1, product2) {
+    //   if (product1.price < product2.price) {
+    //     return product1;
+    //   } else {
+    //     return product2;
+    //   }
+    // }
+    // console.log(comparePrice(product1, product2));
+
+    // function isSameProduct(product1, product2) {
+    //   if (JSON.stringify(product1) === JSON.stringify(product2)) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // }
+    // console.log(isSameProduct(product1, product2));
+
+    // const name = "GOOD MORNING";
+
+    // console.log(name.toLowerCase());
+    // console.log(name.repeat(2));
+
+    let score = JSON.parse(localStorage.getItem("score")) || {
+      win: 0,
+      lost: 0,
+    };
+
+    function playGame(guess) {
+      let randomNumber = Math.random();
+      const rsult = "";
+      randomNumber >= 0 && randomNumber < 0.5
+        ? (result = "heads")
+        : (result = "tails");
+      if (result === guess) {
+        console.log("You Win");
+        score.win++;
+      } else {
+        console.log("You Lost");
+        score.lost++;
+      }
+      localStorage.setItem("score", JSON.stringify(score));
+
+      alert(
+        `You have won  ${score.win} Times. You have lost ${score.lost} Times`
+      );
+    }
+  </script>
+</html>
