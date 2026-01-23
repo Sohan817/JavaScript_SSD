@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Excercise</title>
+  </head>
+  <body>
+    <button class="js-button-A">DOM A</button> <br />
+    <br />
+    <button class="js-heads" onclick="resultToss('Heads')">Heads</button>
+    <button class="js-tails" onclick="resultToss('Tails')">Tails</button>
+    <p class="js-toss-result"></p>
+    <input
+      class="js-name"
+      placeholder="Name"
+      onkeydown="
+        if (event.key == 'Enter') {
+          printName();
+        }
+      "
+    />
+    <button onclick="printName()">Submit</button>
+    <p class="js-name-print"></p>
+
+    <p>Amazon shipping calculator</p>
+    <input
+      placeholder="Cost of order"
+      class="js-cost"
+      onkeydown="calculationOnKeyDown(event)"
+    />
+    <button onclick="calculateCost()">Calculate</button>
+    <p class="js-cost-result"></p>
+
+    <input class="js-type" placeholder="Type somethig" onkeyup="typeResult()" />
+    <p class="js-type-result"></p>
+
+    <p>Cart Quantity</p>
+
+    <button onclick="updateCartQuantity(1)">Add to Cart</button>
+    <button onclick="updateCartQuantity(2)">+2</button>
+    <button onclick="updateCartQuantity(3)">+3</button>
+    <button onclick="updateCartQuantity(4)">+4</button>
+    <button onclick="updateCartQuantity(5)">+5</button>
+    <button onclick="updateCartQuantity(-1)">Remove From the Cart</button>
+    <button onclick="updateCartQuantity(-2)">-2</button>
+    <button onclick="updateCartQuantity(-3)">-3</button>
+    <button
+      onclick="
+        cartQuantity = 0;
+        console.log('Cart Quantity is reset.');
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      "
+    >
+      Reset Cart
+    </button>
+    <p class="js-cart-quantity"></p>
+  </body>
+  <script>
+    //5A
+    const buttonA = document.querySelector(".js-button-A").innerHTML;
+    console.log(buttonA);
+
+    //5B
+    const buttonB = (document.querySelector(".js-button-A").innerHTML =
+      "5B Done");
+
+    //5C
+    let toss = "";
+    function resultToss(toss) {
+      const buttonHeads = document.querySelector(".js-heads").innerHTML;
+
+      const buttonTails = document.querySelector(".js-tails").innerHTML;
+
+      if (toss === "Heads") {
+        document.querySelector(".js-toss-result").innerHTML =
+          `You Chose : ${buttonHeads}`;
+      } else {
+        document.querySelector(".js-toss-result").innerHTML =
+          `You Chose : ${buttonTails}`;
+      }
+    }
+
+    //5D
+
+    function printName() {
+      const inputValue = document.querySelector(".js-name").value;
+      document.querySelector(".js-name-print").innerHTML =
+        `Your name is: ${inputValue}`;
+    }
+
+    //5E
+    function calculateCost() {
+      let inputValue = document.querySelector(".js-cost").value;
+      inputValue = Number(inputValue);
+      if (inputValue < 40) {
+        document.querySelector(".js-cost-result").innerHTML = `$${
+          (inputValue * 100 + 10 * 100) / 100
+        }`;
+      } else {
+        document.querySelector(".js-cost-result").innerHTML = `$${inputValue}`;
+      }
+    }
+
+    function calculationOnKeyDown(event) {
+      if (event.key === "Enter") {
+        calculateCost();
+      }
+    }
+
+    //5F
+    function typeResult() {
+      let typing = document.querySelector(".js-type").value;
+      document.querySelector(".js-type-result").innerHTML = `${typing}`;
+    }
+
+    //5G
+    let cartQuantity = localStorage.getItem("cartQuantity") || 0;
+
+    function updateCartQuantity(value) {
+      if (cartQuantity + value > 10) {
+        alert("The cart is Full");
+        return;
+      }
+      if (cartQuantity + value < 0) {
+        alert("The cart is Invalid");
+        return;
+      }
+      cartQuantity += value;
+      localStorage.setItem("cartQuantity", cartQuantity);
+      totalQuantity();
+    }
+    function totalQuantity() {
+      document.querySelector(".js-cart-quantity").innerHTML =
+        `Cart Quantity: ${cartQuantity}`;
+    }
+  </script>
+</html>

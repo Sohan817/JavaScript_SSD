@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Project</title>
+  </head>
+  <body>
+    <p>Youtube Subscribe Button</p>
+    <button onclick="subcribe();" class="js-subscrie-button">Subscribe</button>
+    <br />
+
+    <p>Rock Paper Scissors</p>
+    <button onclick=" playGame('rock');">Rock</button>
+    <button onclick=" playGame('paper');">Paper</button>
+    <button onclick=" playGame('scissors');">Scissors</button>
+
+    <p class="js-score-result"></p>
+    <p class="js-move"></p>
+    <p class="js-score"></p>
+    <button
+      onclick="score.win = 0; score.lost= 0; score.tie=0;
+    localStorage.removeItem('score');
+    updateScore()"
+    >
+      Reset score
+    </button>
+
+    <p>Amazon shipping calculator</p>
+    <input
+      placeholder="Cost of order"
+      class="js-cost"
+      onkeydown="
+    calculationOnKeyDown(event);
+    "
+    />
+    <button onclick=" calculateCost();">Calculate</button>
+    <p class="js-cost-result"></p>
+  </body>
+  <script>
+    //Youtube Subscribe button
+    function subcribe() {
+      let subscribeButton = document.querySelector(
+        ".js-subscrie-button"
+      ).innerText;
+
+      if (subscribeButton === "Subscribe") {
+        document.querySelector(".js-subscrie-button").innerText = "Subscribed";
+      } else {
+        document.querySelector(".js-subscrie-button").innerText = "Subscribe";
+      }
+    }
+
+    //Rock paper scissors game
+    let score = JSON.parse(localStorage.getItem("score")) || {
+      win: 0,
+      lost: 0,
+      tie: 0,
+    };
+    updateScore();
+
+    function pickComputerMove() {
+      let computerMove = "";
+      const randomNumber = Math.random();
+      if (randomNumber >= 0 && randomNumber < 1 / 3) {
+        computerMove = "rock";
+      } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+        computerMove = "paper";
+      } else if (randomNumber >= 2 / 3 && randomNumber <= 1) {
+        computerMove = "scissors";
+      }
+      return computerMove;
+    }
+
+    function updateScore() {
+      document.querySelector(
+        ".js-score"
+      ).innerHTML = `Win: ${score.win}, Lost ${score.lost}, Tie ${score.tie}`;
+    }
+
+    function playGame(playerMove) {
+      const computerMove = pickComputerMove();
+      let result = "";
+      if (playerMove == "rock") {
+        if (computerMove == "rock") {
+          result = "Win";
+        } else if (computerMove == "paper") {
+          result = "Lost";
+        } else if (computerMove == "scissors") {
+          result = "Tie";
+        }
+      } else if (playerMove == "paper") {
+        if (computerMove == "rock") {
+          result = "Tie";
+        } else if (computerMove == "paper") {
+          result = "Win";
+        } else if (computerMove == "scissors") {
+          result = "Lost";
+        }
+      } else if (playerMove == "scissors") {
+        if (computerMove == "rock") {
+          result = "Tie";
+        } else if (computerMove == "paper") {
+          result = "Lost";
+        } else if (computerMove == "scissors") {
+          result = "Win";
+        }
+      }
+      if (result === "Win") {
+        score.win++;
+      } else if (result === "Lost") {
+        score.lost++;
+      } else if (result === "Tie") {
+        score.tie++;
+      }
+
+      localStorage.setItem("score", JSON.stringify(score));
+      updateScore();
+
+      document.querySelector(".js-score-result").innerHTML = `${result}`;
+      document.querySelector(
+        ".js-move"
+      ).innerHTML = `You Pick ${playerMove}.Computer Pick ${computerMove}`;
+    }
+
+    //Calculate Amazon shipping cost
+
+    function calculateCost() {
+      let inputValue = document.querySelector(".js-cost").value;
+      inputValue = Number(inputValue);
+      if (inputValue < 40) {
+        document.querySelector(".js-cost-result").innerHTML = `$${
+          inputValue + 10
+        }`;
+      } else {
+        document.querySelector(".js-cost-result").innerHTML = `$${inputValue}`;
+      }
+    }
+
+    function calculationOnKeyDown(event) {
+      if (event.key === "Enter") {
+        calculateCost();
+      }
+    }
+  </script>
+</html>
