@@ -1,27 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Project</title>
+    <style>
+      .subcribe-button {
+        border: none;
+        background-color: black;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+      .is-subscribed {
+        background-color: rgb(39, 209, 39);
+        color: rgb(25, 24, 24);
+      }
+
+      body {
+        font-family: Arial;
+        font-weight: bold;
+      }
+
+      .cost-input {
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      .calculate-button {
+        background-color: rgb(48, 122, 48);
+        color: white;
+        font-size: 15px;
+        padding: 12px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <p>Youtube Subscribe Button</p>
-    <button onclick="subcribe();" class="js-subscrie-button">Subscribe</button>
+    <button onclick="subcribe()" class="js-subscrie-button subcribe-button">
+      Subscribe
+    </button>
     <br />
 
     <p>Rock Paper Scissors</p>
-    <button onclick=" playGame('rock');">Rock</button>
-    <button onclick=" playGame('paper');">Paper</button>
-    <button onclick=" playGame('scissors');">Scissors</button>
+    <button onclick="playGame('rock')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissors')">Scissors</button>
 
     <p class="js-score-result"></p>
     <p class="js-move"></p>
     <p class="js-score"></p>
     <button
-      onclick="score.win = 0; score.lost= 0; score.tie=0;
-    localStorage.removeItem('score');
-    updateScore()"
+      onclick="
+        score.win = 0;
+        score.lost = 0;
+        score.tie = 0;
+        localStorage.removeItem('score');
+        updateScore();
+      "
     >
       Reset score
     </button>
@@ -29,25 +73,31 @@
     <p>Amazon shipping calculator</p>
     <input
       placeholder="Cost of order"
-      class="js-cost"
-      onkeydown="
-    calculationOnKeyDown(event);
-    "
+      class="js-cost cost-input"
+      onkeydown="calculationOnKeyDown(event)"
     />
-    <button onclick=" calculateCost();">Calculate</button>
+    <button onclick="calculateCost()" class="calculate-button">
+      Calculate
+    </button>
     <p class="js-cost-result"></p>
   </body>
   <script>
     //Youtube Subscribe button
     function subcribe() {
       let subscribeButton = document.querySelector(
-        ".js-subscrie-button"
+        ".js-subscrie-button",
       ).innerText;
 
       if (subscribeButton === "Subscribe") {
         document.querySelector(".js-subscrie-button").innerText = "Subscribed";
+        document
+          .querySelector(".js-subscrie-button")
+          .classList.add("is-subscribed");
       } else {
         document.querySelector(".js-subscrie-button").innerText = "Subscribe";
+        document
+          .querySelector(".js-subscrie-button")
+          .classList.remove("is-subscribed");
       }
     }
 
@@ -73,9 +123,8 @@
     }
 
     function updateScore() {
-      document.querySelector(
-        ".js-score"
-      ).innerHTML = `Win: ${score.win}, Lost ${score.lost}, Tie ${score.tie}`;
+      document.querySelector(".js-score").innerHTML =
+        `Win: ${score.win}, Lost ${score.lost}, Tie ${score.tie}`;
     }
 
     function playGame(playerMove) {
@@ -118,9 +167,8 @@
       updateScore();
 
       document.querySelector(".js-score-result").innerHTML = `${result}`;
-      document.querySelector(
-        ".js-move"
-      ).innerHTML = `You Pick ${playerMove}.Computer Pick ${computerMove}`;
+      document.querySelector(".js-move").innerHTML =
+        `You Pick ${playerMove}.Computer Pick ${computerMove}`;
     }
 
     //Calculate Amazon shipping cost
