@@ -1,0 +1,25 @@
+body {
+  background-color: black;
+}
+.number_button {
+  background-color: gray;
+  color: white;
+  padding: 30px;
+  border: none;
+  border-radius: 60px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.operator-button {
+  background-color: orange;
+  color: white;
+  padding: 30px;
+  border: none;
+  border-radius: 60px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.show-result {
+  color: white;
+  font-size: 20px;
+}

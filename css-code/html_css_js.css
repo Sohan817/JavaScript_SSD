@@ -1,0 +1,76 @@
+.add-to-cart-button {
+  background-color: rgb(255, 216, 20);
+  color: black;
+  font-weight: bold;
+  padding: 10px 40px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+.request-button {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 10px 40px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.scheduled-button {
+  background-color: rgb(230, 230, 230);
+  color: black;
+  font-weight: bold;
+  padding: 10px 40px;
+  border-radius: 10px;
+}
+.gaming-button {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 10px 40px;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.music-button {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 10px 40px;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.tech-button {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 10px 40px;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.is-toggle {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 10px 40px;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.calculate-button {
+  background-color: rgb(40, 111, 57);
+  color: white;
+  font-weight: bold;
+  padding: 10px 40px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.input-area {
+  padding: 10px 40px;
+  margin-right: 10px;
+}
+.error-button {
+  color: red;
+}

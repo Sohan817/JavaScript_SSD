@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css-code/calculator_final.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <p class="show-result"></p>
+    <button class="number_button" onclick="updateCalculatio('1')">1</button>
+    <button class="number_button" onclick="updateCalculatio('2')">2</button>
+    <button class="number_button" onclick="updateCalculatio('3')">3</button>
+    <button class="operator-button" onclick="updateCalculatio('+')">+</button>
+    <br />
+    <button class="number_button" onclick="updateCalculatio('4')">4</button>
+    <button class="number_button" onclick="updateCalculatio('5')">5</button>
+    <button class="number_button" onclick="updateCalculatio('6')">6</button>
+    <button class="operator-button" onclick="updateCalculatio('-')">-</button
+    ><br />
+    <button class="number_button" onclick="updateCalculatio('7')">7</button>
+    <button class="number_button" onclick="updateCalculatio('8')">8</button>
+    <button class="number_button" onclick="updateCalculatio('9')">9</button>
+    <button class="operator-button" onclick="updateCalculatio('*')">*</button
+    ><br />
+    <button class="number_button" onclick="updateCalculatio('0')">0</button>
+    <button class="number_button" onclick="updateCalculatio('.')">.</button>
+    <button class="number_button"
+      onclick="
+        calculation = eval(calculation);
+        displayCal();
+      "
+    >
+      =
+    </button class="number_button">
+    <button class="operator-button" onclick="updateCalculatio('/')">/</button
+    ><br />
+    <button
+    class="number_button"
+      onclick="
+        calculation = '';
+        displayCal();
+      "
+    >
+      Clear
+    </button>
+  </body>
+  <script src="js-code/calculator_final.js"></script>
+</html>

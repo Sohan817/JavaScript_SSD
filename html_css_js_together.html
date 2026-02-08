@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css-code/html_css_js.css" />
+    <title>HTML CSS JS</title>
+  </head>
+  <body>
+    <!--Add to cart-->
+    <button class="add-to-cart-button">Add to Cart</button>
+
+    <!--Uber button-->
+    <button class="request-button">Request Now</button>
+    <button class="scheduled-button">Schedule for later</button> <br />
+
+    <!--Test button-->
+    <button class="js-button">Test</button>
+    <p class="test"></p>
+
+    <!--Gaming button-->
+    <!--<button onclick="gamingButton()" class="gaming-button is-toggle">
+      Gaming
+    </button>-->
+
+    <!--Gaming Music Tech button-->
+    <button
+      onclick="gmtButton('.gaming-button')"
+      class="gaming-button is-toggle"
+    >
+      Gaming
+    </button>
+    <button onclick="gmtButton('.music-button')" class="music-button is-toggle">
+      Music
+    </button>
+    <button onclick="gmtButton('.tech-button')" class="tech-button is-toggle">
+      Tech
+    </button>
+
+    <!--Shipping Calculator-->
+    <p>Amazon shipping calculator</p>
+    <input
+      placeholder="Cost of order"
+      class="js-cost cost-input input-area"
+      onkeydown="calculationOnKeyDown(event)"
+    />
+    <button onclick="calculateCost()" class="calculate-button">
+      Calculate
+    </button>
+    <p class="js-cost-result"></p>
+
+    <script src="js-code/html_css_js.js"></script>
+  </body>
+</html>
