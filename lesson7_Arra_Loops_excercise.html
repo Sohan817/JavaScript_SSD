@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Loops</title>
+  </head>
+  <body></body>
+  <script>
+    //Example 1
+    // const number1 = [10, 20, 30];
+    // number1[number1.length - 1] = 99;
+    // console.log(number1[number1.length - 1]);
+
+    //Example 2
+    // function getLastValue(arr = []) {
+    //   return arr[arr.length - 1];
+    // }
+
+    // const arr1 = [1, 20, 22, 24, 5];
+
+    // const arr2 = ["bad", "good", "sad"];
+
+    // console.log(getLastValue(arr2));
+
+    //Example 3
+    // function arraySwap(arr = []) {
+    //   const lastValue = arr[arr.length - 1];
+    //   const firsValue = arr[0];
+    //   arr[arr.length - 1] = firsValue;
+    //   arr[0] = lastValue;
+    //   return arr;
+    // }
+
+    // const arr3 = [1, 20, 22, 24, 5];
+
+    // const arr4 = ["bad", "good", "sad"];
+
+    // console.log(arraySwap(arr4));
+
+    //Example 4
+    // for (let i = 0; i <= 10; i += 2) {
+    //   console.log(i);
+    // }
+    // let i = 0;
+    // while (i <= 10) {
+    //   console.log(i);
+    //   i += 2;
+    // }
+    //Example 4
+    // for (let i = 5; i >= 0; i--) {
+    //   console.log(i);
+    // }
+    // let j = 5;
+    // while (j >= 0) {
+    //   console.log(j);
+    //   j--;
+    // }
+
+    //Example 5
+    // let arr5 = [2, 5, 8, 5, 4];
+    // let arr6 = [8, 9, 5, 0, -1];
+    // function addOne(arr) {
+    //   let res5 = [];
+    //   for (let i = 0; i < arr.length; i++) {
+    //     res5[i] = arr[i] + 1;
+    //   }
+    //   return res5;
+    // }
+    // console.log(addOne(arr5));
+    // console.log(addOne(arr6));
+
+    //Example 6
+    // let arr7 = [2, 5, 8, 5, 4];
+    // function addNum(arr, num) {
+    //   let res5 = [];
+    //   for (let i = 0; i < arr.length; i++) {
+    //     res5[i] = arr[i] + num;
+    //   }
+    //   return res5;
+    // }
+    // console.log(addNum(arr7, 2));
+
+    //Exapmle 7
+    // let arr8 = [2, 5, 8, 5, 4];
+    // let arr9 = [4, 3, 1, 7, 2];
+    // function addArray(arr1, arr2) {
+    //   let res5 = [];
+    //   for (let i = 0; i < arr1.length; i++) {
+    //     res5[i] = arr1[i] + arr2[i];
+    //   }
+    //   return res5;
+    // }
+    // console.log(addArray(arr8, arr9));
+
+    //Exapmle 8
+    // let arr10 = [2, -9, -2, 5, 4];
+    // function positiveCount(arr) {
+    //   let res5 = 0;
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] > 0) {
+    //       res5++;
+    //     }
+    //   }
+    //   return res5;
+    // }
+    // console.log(positiveCount(arr10));
+
+    //Exapmle 9
+    // let arr10 = [16, 2, 8, 5, 13];
+    // function minMax(arr) {
+    //   let min = arr[0];
+    //   let max = arr[0];
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] > max) {
+    //       max = arr[i];
+    //     }
+    //     if (arr[i] < min) {
+    //       min = arr[i];
+    //     }
+    //   }
+    //   console.log(`Max: ${max} Min: ${min}`);
+    // }
+    // minMax(arr10);
+
+    //Exapmle 10
+    let arr11 = ["Apple", "Apple", "Mango", "Mango", "Graps", "Orange"];
+
+    function countWards(arr) {
+      let res = {};
+      for (let i = 0; i < arr.length; i++) {
+        const word = arr[i];
+        if (!res[word]) {
+          res[word] = 1;
+        } else {
+          res[word]++;
+        }
+      }
+      return res;
+    }
+    console.log(countWards(arr11));
+  </script>
+</html>
