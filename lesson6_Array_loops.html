@@ -3,21 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css-code/lesson6_todoList.css" />
     <title>Todo List</title>
   </head>
   <body>
-    <input placeholder="What to do" class="js-todo-list" />
-    <button onclick="myTodo()">Add</button>
-    <div class="js-todo-result"></div>
+    <h3>Todo List</h3>
+    <div class="todo-input">
+      <input placeholder="What to do" class="js-todo-list name-input" />
+      <input type="date" class="js-due-date due-date-iput" />
+      <button onclick="myTodo()" class="add-todo-butt">Add</button>
+    </div>
+    <div class="js-todo-result todo-grid"></div>
   </body>
   <script>
-    const todoList = [];
+    const todoList = [{ name: "Make Dinner", dueDate: "2-27-2026" }];
     renderTodo();
     function renderTodo() {
       let todoListHtml = [];
       for (let i = 0; i < todoList.length; i++) {
-        const todo = todoList[i];
-        const html = `<p>${todo}</p>`;
+        const todoObject = todoList[i];
+        // const name = todoObject.name;
+        // const dueDate = todoObject.dueDate;
+        const { name, dueDate } = todoObject;
+        const html = `<div>${name} </div> 
+        <div>${dueDate}</div> 
+          <button onclick= "
+          todoList.splice(${i},1);
+          renderTodo();
+          " id="delete-todo-button">Delete</button>`;
         todoListHtml = todoListHtml + html;
       }
       document.querySelector(".js-todo-result").innerHTML = todoListHtml;
@@ -25,8 +38,10 @@
 
     function myTodo() {
       let todoHtml = document.querySelector(".js-todo-list");
+      let dateTodoHtml = document.querySelector(".js-due-date");
       let name = todoHtml.value;
-      todoList.push(name);
+      let duedate = dateTodoHtml.value;
+      todoList.push({ name: name, dueDate: duedate });
       todoHtml.value = "";
       renderTodo();
     }

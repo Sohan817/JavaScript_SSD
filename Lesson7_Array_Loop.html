@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Loop 2</title>
+  </head>
+  <body></body>
+  <script>
+    //Excercise 1
+    // arr1 = ["hello", "world", "search", "good", "hello"];
+    // function searchArray(arr, searchKey) {
+    //   let res = [];
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (searchKey === arr[i]) {
+    //       res.push(i);
+    //     }
+    //   }
+    //   if (res.length === 0) {
+    //     console.log(-1);
+    //   } else {
+    //     console.log(res);
+    //   }
+    //   return res;
+    // }
+    // searchArray(arr1, "search");
+
+    //Excercise 2,3
+    // arr2 = ["hello", "world", "search", "good", "hello"];
+    // function searchArray(arr, searchKey) {
+    //   let res = "";
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (searchKey === arr[i]) {
+    //       res = i;
+    //       break;
+    //     } else {
+    //       res = -1;
+    //     }
+    //   }
+    //   return res;
+    // }
+    // console.log(searchArray(arr2, "search"));
+
+    //Excercise 4
+    // arr3 = ["apple", "egg", "egg", "mango", "banana", "apple"];
+    // function removeString(arr, foods) {
+    //   let res = [];
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (foods !== arr[i]) {
+    //       res.push(arr[i]);
+    //     }
+    //   }
+    //   return res;
+    // }
+    // console.log(removeString(arr3, "egg"));
+
+    //Excercise 5
+    // arr4 = ["apple", "egg", "apple", "mango", "banana", "egg", "egg"];
+    // function removeString2(arr, foods) {
+    //   let res = [];
+    //   let count = 0;
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (foods === arr[i]) {
+    //       count++;
+    //       if (count <= 2) {
+    //         continue;
+    //       }
+    //     }
+    //     res.push(arr[i]);
+    //   }
+    //   return res;
+    // }
+    // console.log(removeString2(arr4, "apple"));
+
+    //Excercise 6
+    // arr5 = ["apple", "egg", "apple", "mango", "banana", "egg", "egg", "apple"];
+    // function removeString2(arr, foods) {
+    //   arr.reverse();
+    //   let res = [];
+    //   let count = 0;
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (foods === arr[i]) {
+    //       count++;
+    //       if (count <= 2) {
+    //         continue;
+    //       }
+    //     }
+    //     res.push(arr[i]);
+    //   }
+    //   res.reverse();
+    //   return res;
+    // }
+    // console.log(removeString2(arr5, "apple"));
+
+    //Excercise 7
+    // arr5 = ["apple", "egg", "apple", "mango", "banana", "egg", "egg", "apple"];
+    // function removeString2(arr, foods) {
+    //   let res = [];
+    //   let count = 0;
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (foods === arr[i]) {
+    //       count++;
+    //       if (count <= 2) {
+    //         continue;
+    //       }
+    //     }
+    //     res.push(arr[i]);
+    //   }
+    //   return res;
+    // }
+    // console.log(removeString2(arr5, "apple"));
+
+    //Excercise 8
+    // arr6 = ["apple", "egg", "apple", "mango", "banana", "egg", "egg", "apple"];
+    // function removeString2(arr, foods) {
+    //   let arrCpy = arr.slice();
+    //   arrCpy.reverse();
+    //   let res = [];
+    //   let count = 0;
+    //   for (let i = 0; i < arrCpy.length; i++) {
+    //     if (foods === arrCpy[i]) {
+    //       count++;
+    //       if (count <= 2) {
+    //         continue;
+    //       }
+    //     }
+    //     res.push(arrCpy[i]);
+    //   }
+    //   res.reverse();
+    //   return res;
+    // }
+    // console.log(removeString2(arr6, "egg"));
+    // console.log(arr6);
+
+    //Excercise 9
+    // let res = "";
+    // for (let i = 1; i <= 20; i++) {
+    //   if (i % 3 === 0 && i % 5 !== 0) {
+    //     res = res + "Fizz,";
+    //   } else if (i % 5 === 0 && i % 3 !== 0) {
+    //     res = res + "Buzz,";
+    //   } else if (i % 3 === 0 && i % 5 === 0) {
+    //     res = res + "FizzBuzz,";
+    //   } else {
+    //     res = res + `${i},`;
+    //   }
+    // }
+    // console.log(res);
+
+    //Excercise 10
+    arr7 = ["hello", "world", "search", "search", "world", "good", "hello"];
+    function findIndex(arr, searchKey) {
+      for (let i = 0; i < arr.length; i++) {
+        if (searchKey === arr[i]) {
+          return i;
+        }
+      }
+      return -1;
+    }
+
+    console.log(findIndex(arr7, "search"));
+
+    function unique(arr) {
+      let res = [];
+      for (let j = 0; j < arr.length; j++) {
+        const word = arr[j];
+        if (findIndex(res, word) === -1) {
+          res.push(arr[j]);
+        }
+      }
+      return res;
+    }
+    console.log(unique(arr7));
+  </script>
+</html>
