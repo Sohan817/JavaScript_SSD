@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+  </head>
+  <body>
+    <!-- <button onclick="starToFinish()" class="start-button">Start</button> <br />
+    <button onclick="starLoadingFinish()" class="start-button">Start</button>
+    <br /> -->
+    <!-- <button onclick="addToCartMessage()" class="addTo-Cart-button">
+      Add to Cart
+    </button>
+    <p class="addTo-Cart-message"></p> -->
+    <!-- <button onclick="add()">Add</button>
+    <button onclick="remove()">Remove</button> -->
+    <button
+      onclick="
+        messages++;
+        displayNotification();
+      "
+    >
+      Add
+    </button>
+
+    <button
+      onclick="
+        if (messages > 0) {
+          messages--;
+          if (messages === 0) {
+            stopNotification();
+          }
+        }
+      "
+    >
+      Remove
+    </button>
+
+    <script>
+      //Ex a
+      //   let add = function () {
+      //     console.log(2 + 3);
+      //   };
+      //   add();
+      //   add();
+
+      //Ex b
+      //   const add = function () {
+      //     console.log(2 + 3);
+      //   };
+
+      //   add();
+      //   add();
+
+      //   function runTwice(fun) {
+      //     fun();
+      //     fun();
+      //   }
+
+      //   runTwice(function () {
+      //     console.log("12b");
+      //   });
+
+      //   runTwice(add);
+
+      //Ex C
+      // function starToFinish() {
+      //   setTimeout(function () {
+      //     document.querySelector(".start-button").innerHTML = "Finished";
+      //   }, 1000);
+      // }
+
+      //Ex D
+      // function starLoadingFinish() {
+      //   document.querySelector(".start-button").innerHTML = "Loading...";
+      //   setTimeout(function () {
+      //     document.querySelector(".start-button").innerHTML = "Finished";
+      //   }, 1000);
+      // }
+
+      //Ex E,F
+      // let TimeoutId;
+      // function addToCartMessage() {
+      //   document.querySelector(".addTo-Cart-message").innerHTML = "Added";
+      //   clearTimeout(TimeoutId);
+      //   TimeoutId = setTimeout(function () {
+      //     document.querySelector(".addTo-Cart-message").innerHTML = "";
+      //   }, 2000);
+      // }
+
+      //Ex G
+      // setInterval(function () {
+      //   if (document.title === "App") {
+      //     document.title = "(2) New Message";
+      //   } else {
+      //     document.title = "App";
+      //   }
+      // }, 2000);
+
+      //Ex H
+      // let message = 1;
+      // function add() {
+      //   message = message + 1;
+      // }
+      // function remove() {
+      //   if (message >= 1) {
+      //     message = message - 1;
+      //   }
+      // }
+
+      // setInterval(function () {
+      //   if (document.title === "App") {
+      //     document.title = `(${message}) New Message`;
+      //   } else {
+      //     document.title = "App";
+      //   }
+      // }, 2000);
+
+      //Ex I
+
+      let messages = 2;
+
+      // Save the intervalId in case we need to cancel it.
+      let intervalId;
+
+      // We'll use this variable to keep track of whether
+      // or not we're displaying the notification.
+      let isDisplayingNotification;
+
+      // Start displaying the notification in the tab
+      // when the page first loads.
+      displayNotification();
+
+      function displayNotification() {
+        // If we're already displaying the notification,
+        // stop this function because we don't want to
+        // create 2 intervals at the same time.
+        if (isDisplayingNotification) {
+          return;
+        }
+
+        isDisplayingNotification = true;
+
+        intervalId = setInterval(function () {
+          if (document.title === "App") {
+            document.title = `(${messages}) New messages`;
+          } else {
+            document.title = "App";
+          }
+        }, 1000);
+      }
+
+      function stopNotification() {
+        isDisplayingNotification = false;
+
+        clearInterval(intervalId);
+        document.title = "App";
+      }
+    </script>
+  </body>
+</html>
