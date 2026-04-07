@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Ex A,B
+      //   const multiply = (num1, num2) => num1 * num2;
+
+      //   console.log(multiply(4, 5));
+
+      //Ex C
+      //   let arr1 = [1, -5, 9, -4, -5, 8, 4];
+      //   let count = 0;
+      //   const countPsitive = (arr) => {
+      //     arr.forEach((element) => {
+      //       if (element > 0) {
+      //         count++;
+      //       }
+      //     });
+      //     return count;
+      //   };
+
+      //   console.log(countPsitive(arr1));
+
+      //Ex D
+      //   const addNum = (arr, num) => arr.map((value) => value + num);
+      //   let arr1 = [1, -5, 9, -4, -5, 8, 4];
+      //   console.log(addNum(arr1, 2));
+
+      //Ex E
+      //   const removeEgg = (arr) =>
+      //     arr.filter((value, index) => {
+      //       if (value === "Egg") {
+      //         return false;
+      //       } else {
+      //         return true;
+      //       }
+      //     });
+      //   let arr1 = ["Apple", "Rise", "Banana", "Egg", "Mango", "Egg", "Orange"];
+      //   console.log(removeEgg(arr1));
+
+      //Ex F
+
+      const removeFirstTwoEgg = (arr) => {
+        let count = 0;
+        return arr.filter((value, index) => {
+          if (value === "Egg") {
+            count++;
+            if (count <= 2) {
+              return false;
+            } else {
+              return true;
+            }
+          } else {
+            return true;
+          }
+        });
+      };
+
+      let arr1 = ["Apple", "Egg", "Banana", "Egg", "Mango", "Egg", "Orange"];
+      console.log(removeFirstTwoEgg(arr1));
+    </script>
+  </body>
+</html>

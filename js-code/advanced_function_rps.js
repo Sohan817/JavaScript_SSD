@@ -24,6 +24,32 @@ function updateScore() {
     `Win: ${score.win}, Lost ${score.lost}, Tie ${score.tie}`;
 }
 
+document.querySelector(".reset-score-button").addEventListener("click", () => {
+  let response = confirm("Are you sure you want to reset the score?");
+  if (response === true) {
+    score.win = 0;
+    score.lost = 0;
+    score.tie = 0;
+    localStorage.removeItem("score");
+    updateScore();
+  } else {
+    updateScore();
+  }
+});
+
+document.body.addEventListener("keydown", (event) => {
+  let response = confirm("Are you sure you want to reset the score?");
+  if ((response = true)) {
+    score.win = 0;
+    score.lost = 0;
+    score.tie = 0;
+    localStorage.removeItem("score");
+    updateScore();
+  } else {
+    updateScore();
+  }
+});
+
 let isAutoPlaying = false;
 let inntervalId;
 function autoPlay() {
@@ -40,6 +66,27 @@ function autoPlay() {
     isAutoPlaying = false;
   }
 }
+
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === "r" || event.key === "R") {
+    playGame("rock");
+  } else if (event.key === "p" || event.key === "P") {
+    playGame("paper");
+  } else if (event.key === "s" || event.key === "S") {
+    playGame("scissors");
+  }
+});
+
+document.querySelector(".auto-play-button").addEventListener("click", () => {
+  autoPlay();
+});
+
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === "a" || event.key === "A") {
+    autoPlay();
+  }
+});
+
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
   let result = "";
